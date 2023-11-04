@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculadora</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <h1>Calculadora</h1>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="contenedor">
+      <form id="form" novalidate>
+        <div>
+          <input type="number" id="num1" placeholder="Primer numero">
+          <input type="number" id="num2" placeholder="Segundo numero">
+          <input type="number" id="res" placeholder="Resultado" readonly>
+        </div>
+        <div>
+          <button id="btnSumar">Sumar</button>
+          <button id="btnRestar">Restar</button>
+          <button id="btnMultiplicar">Multiplicar</button>
+          <button id="btnDividir">Dividir</button>
+        </div>
+        
+      </form>
+    </div>
+  </section>
+  <footer>
+    Pablo Rito - <span id="year"></span>
+  </footer>
+	<script src="./script.js"></script>
+</body>
+</html>
