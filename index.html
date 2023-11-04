@@ -1,38 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Calculadora</title>
-  <link rel="stylesheet" href="./styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Calculadora</title>
 </head>
 <body>
-  <header>
-    <div class="contenedor">
-      <h1>Calculadora</h1>
-    </div>
-  </header>
-  <section class="hero">
-    <div class="contenedor">
-      <form id="form" novalidate>
-        <div>
-          <input type="number" id="num1" placeholder="Primer numero">
-          <input type="number" id="num2" placeholder="Segundo numero">
-          <input type="number" id="res" placeholder="Resultado" readonly>
+    <div class="calculator">
+        <input type="text" id="input1" placeholder="Operando 1">
+        <input type="text" id="input2" placeholder="Operando 2">
+        <div class="grid-container">
+            <button id="add">+</button>
+            <button id="subtract">-</button>
+            <button id="multiply">*</button>
+            <button id="divide">/</button>
         </div>
-        <div>
-          <button id="btnSumar">Sumar</button>
-          <button id="btnRestar">Restar</button>
-          <button id="btnMultiplicar">Multiplicar</button>
-          <button id="btnDividir">Dividir</button>
-        </div>
-        
-      </form>
+        <p id="result">Resultado: </p> <br><br>
+        <a href="javascript:void(0);" onclick="suma(5, 3, mostrarResultado);">Llamar a la función suma</a>
     </div>
-  </section>
-  <footer>
-    Pablo Rito - <span id="year"></span>
-  </footer>
-	<script src="./script.js"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>

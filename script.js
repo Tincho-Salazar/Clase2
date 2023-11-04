@@ -1,61 +1,46 @@
-document.getElementById('year').innerHTML = (new Date().getFullYear());
-const form = document.querySelector('form');
-const resultadoHTML = document.querySelector('.resultado');
+// Obtén los elementos del DOM
+const input1 = document.getElementById('input1');
+const input2 = document.getElementById('input2');
+const addButton = document.getElementById('add');
+const subtractButton = document.getElementById('subtract');
+const multiplyButton = document.getElementById('multiply');
+const divideButton = document.getElementById('divide');
+const resultElement = document.getElementById('result');
 
-function validar(num1,num2){
-  let valido = true;
-  
-  if(num1.value == ''){
-    num1.classList.add('invalid');
-    valido = false;
-  } else {
-    num1.classList.remove('invalid');
-  }
+// Agrega event listeners para cada operación
+addButton.addEventListener('click', () => {
+    const operand1 = parseFloat(input1.value);
+    const operand2 = parseFloat(input2.value);
+    const result = operand1 + operand2;
+    resultElement.textContent = 'Resultado: ' + result;
+});
 
+subtractButton.addEventListener('click', () => {
+    const operand1 = parseFloat(input1.value);
+    const operand2 = parseFloat(input2.value);
+    const result = operand1 - operand2;
+    resultElement.textContent = 'Resultado: ' + result;
+});
 
-  if(num2.value == ''){
-    num2.classList.add('invalid');
-    valido = false;
-  } else {
-    num2.classList.remove('invalid');
-  }
+multiplyButton.addEventListener('click', () => {
+    const operand1 = parseFloat(input1.value);
+    const operand2 = parseFloat(input2.value);
+    const result = operand1 * operand2;
+    resultElement.textContent = 'Resultado: ' + result;
+});
 
-  return valido;
+divideButton.addEventListener('click', () => {
+    const operand1 = parseFloat(input1.value);
+    const operand2 = parseFloat(input2.value);
+    const result = operand1 / operand2;
+    resultElement.textContent = 'Resultado: ' + result;
+});
+
+function suma(a, b, callback) {
+  let c = a + b;
+  callback(c);
 }
 
-function calcular(num1,num2,operador){
-  let resultado = 0;
-  switch(operador){
-    case 'btnSumar':
-      resultado = num1 + num2;
-      break;
-    case 'btnRestar':
-      resultado = num1 - num2;
-      break;
-    case 'btnMultiplicar':
-      resultado = (num1 * num2).toFixed(4);
-      break;
-    case 'btnDividir':
-      resultado = (num1 / num2).toFixed(6);
-      break;      
-  }
-
-  return resultado;
+function mostrarResultado(resultado) {
+  alert("El resultado de la suma es: " + resultado);
 }
-
-form.addEventListener('submit',(event) => {
-  event.preventDefault();
-
-  let { num1, num2, res } = form;
-  
-  if(!validar(num1,num2)){
-    return;
-  }
-  
-  let operacion = event.submitter.getAttribute('id');
-  
-  let resultado = calcular(+(num1.value),+(num2.value),operacion);
-
-  res.value = resultado
-
-})
